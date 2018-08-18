@@ -3,22 +3,14 @@ This is a Docker image for [Digdag](https://www.digdag.io).
 
 # Usage
 
-**There's no published image at Docker Hub yet.**
-
-To build this image.
+You can start a Digdag server by running
 
 ```bash
-docker build -t local/digdag
+docker run --rm -p 65432:65432 kkawa/digdag -m -b 0.0.0.0
 ```
 
-Once you build the image for your own, you can use it as a server by running
+or run it as a cli by running
 
 ```bash
-docker run --rm -p 65432:65432 local/digdag -m -b 0.0.0.0
-```
-
-or as a client by running
-
-```bash
-docker run --rm -it -v $(pwd):/src local/digdag init mydag
+docker run --rm -it -v $(pwd):/src kkawa/digdag init mydag
 ```
